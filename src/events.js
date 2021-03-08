@@ -3,6 +3,8 @@ const events = {
   newUser: "newUser",
   disconnect: "disconnect",
   disconnected: "disconnected",
+  sendMessage: "sendMessage",
+  newMessage: "newMessage",
 };
 
 export default events;

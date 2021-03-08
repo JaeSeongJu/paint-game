@@ -28,7 +28,7 @@ const handleFormSubmit = (event) => {
   input.value = "";
   localStorage.setItem(NICKNAME, value);
   body.className = LOGGED_IN;
-  logIn(nickname);
+  logIn(value);
 };
 
 if (loginForm) {
