@@ -1,4 +1,3 @@
-import "./events";
 import events from "./events";
 
 const socketController = (socket) => {

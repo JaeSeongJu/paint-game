@@ -9,7 +9,7 @@ exports.handleNewMessage = void 0;
 var _sockets = require("./sockets");
 
 var messages = document.getElementById("jsMessages");
-var sendMessgae = document.getElementById("jsSendMessage");
+var sendMessage = document.getElementById("jsSendMessage");
 
 var appendMessage = function appendMessage(text, nickname) {
   var li = document.createElement("li");
@@ -19,9 +19,9 @@ var appendMessage = function appendMessage(text, nickname) {
 
 var handleSendMessage = function handleSendMessage(event) {
   event.preventDefault();
-  var input = sendMessgae.querySelector("input");
+  var input = sendMessage.querySelector("input");
   var value = input.value;
-  (0, _sockets.getSocket)().emit(window.events.sendMessgae, {
+  (0, _sockets.getSocket)().emit(window.events.sendMessage, {
     message: value
   });
   input.value = "";
@@ -31,13 +31,13 @@ var handleSendMessage = function handleSendMessage(event) {
 var handleNewMessage = function handleNewMessage(_ref) {
   var message = _ref.message,
       nickname = _ref.nickname;
-  return appendMessage(message, nickname);
+  appendMessage(message, nickname);
 };
 
 exports.handleNewMessage = handleNewMessage;
 
-if (sendMessgae) {
-  sendMessgae.addEventListener("submit", handleSendMessage);
+if (sendMessage) {
+  sendMessage.addEventListener("submit", handleSendMessage);
 }
 
 },{"./sockets":5}],2:[function(require,module,exports){
