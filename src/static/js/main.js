@@ -285,10 +285,20 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.handlePlayerUpdate = void 0;
+var board = document.getElementById("jsPBoard");
+
+var addPlayer = function addPlayer(players) {
+  board.innerHTML = "";
+  players.forEach(function (player) {
+    var playerElement = document.createElement("span");
+    playerElement.innerText = "".concat(player.nickname, ": ").concat(player.points);
+    board.appendChild(playerElement);
+  });
+};
 
 var handlePlayerUpdate = function handlePlayerUpdate(_ref) {
   var sockets = _ref.sockets;
-  return console.log(sockets);
+  return addPlayer(sockets);
 };
 
 exports.handlePlayerUpdate = handlePlayerUpdate;
